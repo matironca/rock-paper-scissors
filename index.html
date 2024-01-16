@@ -9,8 +9,22 @@
     <script>
         /*PSEUDOCODE*/
         /*CREATE FUNCTION CALLED getComputerChoice that randomly returns `Rock`, `Paper`, or `Scissors`*/
-        
+        function getComputerChoice() {
+            randomChoice = Math.random() * 3;
+            roundedChoice = Math.floor(randomChoice)
+            if(roundedChoice == 0){
+             return `Rock`
+            }
+            else if (roundedChoice == 1){
+                return `Paper`
+            }
+            else if (roundedChoice == 2){
+                return `Scissors`
+            }
+            return `Error`;
+        }
         /*WRITE A FUNCTION WITH TWO PARAMETERS playerSelection and computerSelection THAT RETURNS WHO WAS THE WINNER AND WHY*/
+        
         /*playerSelection SHOULD BE CASE-INSENSITIVE*/
         /*IF TIE REPLAY THE ROUND*/
         
