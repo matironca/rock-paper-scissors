@@ -56,11 +56,12 @@
             let computerPoints = 0;
             let playerPoints = 0;
         function game(){
+
         /*KEEP SCORE*/
             /*RECALL computerSelection*/
             computerSelection = getComputerChoice();
-           /*Call playRound for result*/
-            let result = playRound(`rock` , computerSelection);
+           /*CALL playRound FOR result // MAKE playerSelection A PROMPT*/
+            let result = playRound(prompt(`Choose Rock, Paper or Scissors`) , computerSelection);
            /*MAKE AN IF STATEMENT TO END THE GAME AFTER playerPoints PLUS computerPoints IS 5 AND SAY WHO WON*/
            if (playerPoints - computerPoints === 3 || computerPoints - playerPoints === 3 || playerPoints + computerPoints === 5) {
                 let gameWinner;
