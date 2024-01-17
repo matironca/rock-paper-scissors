@@ -24,43 +24,54 @@
             return `Error`;
         }
         /*WRITE A FUNCTION WITH TWO PARAMETERS playerSelection and computerSelection THAT RETURNS WHO WAS THE WINNER AND WHY*/
+        
+        const tie = `Tie`;
+      
+        const computerSelection = getComputerChoice();
         function playRound(playerSelection, computerSelection) {
         /*playerSelection SHOULD BE CASE-INSENSITIVE*/
             mayusPlayerSelection = playerSelection.toUpperCase();
+            const playerWin = `Player wins, ${mayusPlayerSelection} beats ${computerSelection.toUpperCase()}`
+            const playerLose = `Player loses, ${computerSelection.toUpperCase()} beats ${mayusPlayerSelection}`
             /*PLAYER WINS*/
             if (mayusPlayerSelection == `ROCK` && computerSelection == `Scissors`){
-                return `Player wins, Rock beats Scissors`
+                return playerWin
             }
             else if (mayusPlayerSelection == `PAPER` && computerSelection == `Rock`) {
-                return `Player wins, Paper beats Rock`
+                return playerWin
             }
             else if (mayusPlayerSelection == `SCISSORS` && computerSelection == `Paper`) {
-                return `Player wins, Scissors beat Paper`
+                return playerWin
             }
             /*PLAYER LOSES*/
             else if (mayusPlayerSelection == `SCISSORS` && computerSelection == `Rock`){
-                return `Player loses, Rock beats Scissors`
+                return playerLose
             }
             else if (mayusPlayerSelection == `ROCK` && computerSelection == `Paper`) {
-                return `Player loses, Paper beats Rock`
+                return playerLose
             }
             else if (mayusPlayerSelection == `PAPER` && computerSelection == `Scissors`) {
-                return `Player loses, Scissors beat Paper`
+                return playerLose
             }
             /*IF TIE REPLAY THE ROUND*/
-
             else if (mayusPlayerSelection === computerSelection.toUpperCase()){
-                return `Tie, please restart round`
+                return tie;
             }
             else{
                 return `Error`
             }
-        
+            
+
         }
-        const playerSelection = `rock`
-        const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-        
+        /*const playerSelection = `rock`*/
+        /*console.log(playRound(playerSelection, computerSelection));*/
+        /*CREATE NEW FUNCTION CALLED GAME THAT KEEPS SCORE AND RETURNS WHO WON A BEST OF 5*/
+        function game(){
+        /*KEEP SCORE*/
+           let computerPoints = 0;
+           let playerPoints = 0;
+
+        }
     </script>
 </body>
 </html>
