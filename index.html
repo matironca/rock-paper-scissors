@@ -27,8 +27,9 @@
         
         const tie = `Tie`;
       
-        const computerSelection = getComputerChoice();
+        let computerSelection = getComputerChoice();
         function playRound(playerSelection, computerSelection) {
+         
         /*playerSelection SHOULD BE CASE-INSENSITIVE*/
             mayusPlayerSelection = playerSelection.toUpperCase();
             const playerWin = `Player wins, ${mayusPlayerSelection} beats ${computerSelection.toUpperCase()}`
@@ -54,11 +55,27 @@
         /*const playerSelection = `rock`*/
         /*console.log(playRound(playerSelection, computerSelection));*/
         /*CREATE NEW FUNCTION CALLED GAME THAT KEEPS SCORE AND RETURNS WHO WON A BEST OF 5*/
+            let computerPoints = 0;
+            let playerPoints = 0;
         function game(){
         /*KEEP SCORE*/
-           let computerPoints = 0;
-           let playerPoints = 0;
-
+            /*RECALL computerSelection*/
+            computerSelection = getComputerChoice();
+           /*Call playRound for result*/
+            let result = playRound(`rock` , computerSelection);
+           /*PLAYER WINS*/
+           if (mayusPlayerSelection == `ROCK` && computerSelection == `Scissors` || mayusPlayerSelection == `PAPER` && computerSelection == `Rock` || mayusPlayerSelection == `SCISSORS` && computerSelection == `Paper`){
+                 playerPoints = playerPoints + 1;
+            }
+            /*PLAYER LOSES*/
+            else if (mayusPlayerSelection == `SCISSORS` && computerSelection == `Rock` || mayusPlayerSelection == `ROCK` && computerSelection == `Paper` || mayusPlayerSelection == `PAPER` && computerSelection == `Scissors`) {
+                computerPoints = computerPoints + 1 ; 
+            }
+            /*TIE*/
+            else {
+                return console.log(`It was a tie. Player points are ${playerPoints} and computer points are ${computerPoints} `);
+            }
+            return console.log(`Player points are ${playerPoints} and computer points are ${computerPoints}`)
         }
     </script>
 </body>
