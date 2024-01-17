@@ -35,11 +35,15 @@
             const playerWin = `Player wins, ${mayusPlayerSelection} beats ${computerSelection.toUpperCase()}`
             const playerLose = `Player loses, ${computerSelection.toUpperCase()} beats ${mayusPlayerSelection}`
             /*PLAYER WINS*/
-            if (mayusPlayerSelection == `ROCK` && computerSelection == `Scissors` || mayusPlayerSelection == `PAPER` && computerSelection == `Rock` || mayusPlayerSelection == `SCISSORS` && computerSelection == `Paper`){
+            if (mayusPlayerSelection == `ROCK` && computerSelection == `Scissors` ||
+              mayusPlayerSelection == `PAPER` && computerSelection == `Rock` ||
+              mayusPlayerSelection == `SCISSORS` && computerSelection == `Paper`){
                 return playerWin
             }
             /*PLAYER LOSES*/
-            else if (mayusPlayerSelection == `SCISSORS` && computerSelection == `Rock` || mayusPlayerSelection == `ROCK` && computerSelection == `Paper` || mayusPlayerSelection == `PAPER` && computerSelection == `Scissors`){
+            else if (mayusPlayerSelection == `SCISSORS` && computerSelection == `Rock` ||
+              mayusPlayerSelection == `ROCK` && computerSelection == `Paper` ||
+              mayusPlayerSelection == `PAPER` && computerSelection == `Scissors`){
                 return playerLose
             }
             /*IF TIE REPLAY THE ROUND*/
@@ -63,7 +67,9 @@
            /*CALL playRound FOR result // MAKE playerSelection A PROMPT*/
             let result = playRound(prompt(`Choose Rock, Paper or Scissors`) , computerSelection);
            /*MAKE AN IF STATEMENT TO END THE GAME AFTER playerPoints PLUS computerPoints IS 5 AND SAY WHO WON*/
-           if (playerPoints - computerPoints === 3 || computerPoints - playerPoints === 3 || playerPoints + computerPoints === 5) {
+           if (playerPoints - computerPoints === 3 
+                || computerPoints - playerPoints === 3 
+                || playerPoints + computerPoints === 5) {
                 let gameWinner;
                 let winnerPoints;
                 if(playerPoints > computerPoints){
@@ -79,11 +85,15 @@
                 return `${gameWinner} wins! Beats the hell out of ${gameLoser} ${winnerPoints} to ${5 - winnerPoints}`
            }
            /*PLAYER WINS*/
-            else if (mayusPlayerSelection == `ROCK` && computerSelection == `Scissors` || mayusPlayerSelection == `PAPER` && computerSelection == `Rock` || mayusPlayerSelection == `SCISSORS` && computerSelection == `Paper`){
+            else if (mayusPlayerSelection == `ROCK` && computerSelection == `Scissors` ||
+              mayusPlayerSelection == `PAPER` && computerSelection == `Rock` ||
+              mayusPlayerSelection == `SCISSORS` && computerSelection == `Paper`){
                  playerPoints = playerPoints + 1;
             }
             /*PLAYER LOSES*/
-            else if (mayusPlayerSelection == `SCISSORS` && computerSelection == `Rock` || mayusPlayerSelection == `ROCK` && computerSelection == `Paper` || mayusPlayerSelection == `PAPER` && computerSelection == `Scissors`) {
+            else if (mayusPlayerSelection == `SCISSORS` && computerSelection == `Rock` ||
+              mayusPlayerSelection == `ROCK` && computerSelection == `Paper` ||
+              mayusPlayerSelection == `PAPER` && computerSelection == `Scissors`) {
                 computerPoints = computerPoints + 1 ; 
             }
             /*TIE*/
