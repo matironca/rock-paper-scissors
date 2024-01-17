@@ -24,9 +24,42 @@
             return `Error`;
         }
         /*WRITE A FUNCTION WITH TWO PARAMETERS playerSelection and computerSelection THAT RETURNS WHO WAS THE WINNER AND WHY*/
-        
+        function playRound(playerSelection, computerSelection) {
         /*playerSelection SHOULD BE CASE-INSENSITIVE*/
-        /*IF TIE REPLAY THE ROUND*/
+            mayusPlayerSelection = playerSelection.toUpperCase();
+            /*PLAYER WINS*/
+            if (mayusPlayerSelection == `ROCK` && computerSelection == `Scissors`){
+                return `Player wins, Rock beats Scissors`
+            }
+            else if (mayusPlayerSelection == `PAPER` && computerSelection == `Rock`) {
+                return `Player wins, Paper beats Rock`
+            }
+            else if (mayusPlayerSelection == `SCISSORS` && computerSelection == `Paper`) {
+                return `Player wins, Scissors beat Paper`
+            }
+            /*PLAYER LOSES*/
+            else if (mayusPlayerSelection == `SCISSORS` && computerSelection == `Rock`){
+                return `Player loses, Rock beats Scissors`
+            }
+            else if (mayusPlayerSelection == `ROCK` && computerSelection == `Paper`) {
+                return `Player loses, Paper beats Rock`
+            }
+            else if (mayusPlayerSelection == `PAPER` && computerSelection == `Scissors`) {
+                return `Player loses, Scissors beat Paper`
+            }
+            /*IF TIE REPLAY THE ROUND*/
+
+            else if (mayusPlayerSelection === computerSelection.toUpperCase()){
+                return `Tie, please restart round`
+            }
+            else{
+                return `Error`
+            }
+        
+        }
+        const playerSelection = `rock`
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
         
     </script>
 </body>
