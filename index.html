@@ -38,13 +38,7 @@
                 return playerWin
             }
             /*PLAYER LOSES*/
-            else if (mayusPlayerSelection == `SCISSORS` && computerSelection == `Rock`){
-                return playerLose
-            }
-            else if (mayusPlayerSelection == `ROCK` && computerSelection == `Paper`) {
-                return playerLose
-            }
-            else if (mayusPlayerSelection == `PAPER` && computerSelection == `Scissors`) {
+            else if (mayusPlayerSelection == `SCISSORS` && computerSelection == `Rock` || mayusPlayerSelection == `ROCK` && computerSelection == `Paper` || mayusPlayerSelection == `PAPER` && computerSelection == `Scissors`){
                 return playerLose
             }
             /*IF TIE REPLAY THE ROUND*/
