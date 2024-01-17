@@ -34,13 +34,7 @@
             const playerWin = `Player wins, ${mayusPlayerSelection} beats ${computerSelection.toUpperCase()}`
             const playerLose = `Player loses, ${computerSelection.toUpperCase()} beats ${mayusPlayerSelection}`
             /*PLAYER WINS*/
-            if (mayusPlayerSelection == `ROCK` && computerSelection == `Scissors`){
-                return playerWin
-            }
-            else if (mayusPlayerSelection == `PAPER` && computerSelection == `Rock`) {
-                return playerWin
-            }
-            else if (mayusPlayerSelection == `SCISSORS` && computerSelection == `Paper`) {
+            if (mayusPlayerSelection == `ROCK` && computerSelection == `Scissors` || mayusPlayerSelection == `PAPER` && computerSelection == `Rock` || mayusPlayerSelection == `SCISSORS` && computerSelection == `Paper`){
                 return playerWin
             }
             /*PLAYER LOSES*/
