@@ -63,8 +63,24 @@
             computerSelection = getComputerChoice();
            /*Call playRound for result*/
             let result = playRound(`rock` , computerSelection);
+           /*MAKE AN IF STATEMENT TO END THE GAME AFTER playerPoints PLUS computerPoints IS 5 AND SAY WHO WON*/
+           if (playerPoints - computerPoints === 3 || computerPoints - playerPoints === 3 || playerPoints + computerPoints === 5) {
+                let gameWinner;
+                let winnerPoints;
+                if(playerPoints > computerPoints){
+                    winnerPoints = playerPoints;
+                    gameWinner = `Player`;
+                    gameLoser = `Computer`
+                }
+                else {
+                    gameWinner = `Computer`
+                   winnerPoints = computerPoints;
+                    gameLoser = `Player`
+                }
+                return `${gameWinner} wins! Beats the hell out of ${gameLoser} ${winnerPoints} to ${5 - winnerPoints}`
+           }
            /*PLAYER WINS*/
-           if (mayusPlayerSelection == `ROCK` && computerSelection == `Scissors` || mayusPlayerSelection == `PAPER` && computerSelection == `Rock` || mayusPlayerSelection == `SCISSORS` && computerSelection == `Paper`){
+            else if (mayusPlayerSelection == `ROCK` && computerSelection == `Scissors` || mayusPlayerSelection == `PAPER` && computerSelection == `Rock` || mayusPlayerSelection == `SCISSORS` && computerSelection == `Paper`){
                  playerPoints = playerPoints + 1;
             }
             /*PLAYER LOSES*/
